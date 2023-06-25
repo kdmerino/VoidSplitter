@@ -4,6 +4,7 @@
 #include <vector>
 #include "hello-greet.h"
 #include "cpp/lib/hello-time.h"
+#include "cpp/src/hello-world-request.pb.h"
 
 #include "absl/flags/flag.h"
 #include "absl/flags/parse.h"
@@ -16,7 +17,9 @@ ABSL_FLAG(std::string, who, "world", "Greeting message name");
 int main(int argc, char** argv) {
   absl::ParseCommandLine(argc, argv);
   std::string who = absl::GetFlag(FLAGS_who);
-  std::cout << get_greet(who) << std::endl;
+  cpp::HelloWorldRequest request;
+  request.set_name(who);
+  std::cout << "Hello " << request.name() << std::endl;  
   print_localtime();
   std::cout << std::endl;
 
