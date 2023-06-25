@@ -19,3 +19,11 @@ cc_binary(
     ],
 )
 
+cc_binary(
+    name = "stage3-hello-world",
+    srcs = ["hello-world-v3.cc"],
+    deps = [
+        ":hello-greet",
+        "//lib:hello-time",
+    ],
+)
