@@ -2,5 +2,5 @@
 author: kdmerino
 
 
-Mini programs in various languages intra-communicating in various topological arrangments; built with a common build pattern.
+Mini programs of various languages intra-communicating through certain topological arrangements of the RPC net; built with a common build pattern.
 
