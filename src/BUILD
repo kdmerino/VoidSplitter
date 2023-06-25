@@ -1,6 +1,21 @@
 load("@rules_cc//cc:defs.bzl", "cc_binary")
 
 cc_binary(
-    name = "hello-world",
+    name = "stage1-hello-world",
     srcs = ["hello-world.cc"],
 )
+
+cc_library(
+    name = "hello-greet",
+    srcs = ["hello-greet.cc"],
+    hdrs = ["hello-greet.h"],
+)
+
+cc_binary(
+    name = "stage2-hello-world",
+    srcs = ["hello-world-v2.cc"],
+    deps = [
+        ":hello-greet",
+    ],
+)
+
