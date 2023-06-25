@@ -1,2 +1,6 @@
 # VoidSplitter
-Mini programs in various language intra-communicating, built with a common build pattern.
+author: kdmerino
+
+
+Mini programs in various languages intra-communicating in various topological arrangments; built with a common build pattern.
+
