@@ -1,4 +1,4 @@
-load("@rules_cc//cc:defs.bzl", "cc_binary")
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
 
 cc_binary(
     name = "stage1-hello-world",
@@ -24,6 +24,6 @@ cc_binary(
     srcs = ["hello-world-v3.cc"],
     deps = [
         ":hello-greet",
-        "//lib:hello-time",
+        "//cpp/lib:hello-time",
     ],
 )
