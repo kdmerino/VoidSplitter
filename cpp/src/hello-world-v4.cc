@@ -6,6 +6,7 @@
 #include "cpp/lib/hello-time.h"
 
 #include "absl/flags/flag.h"
+#include "absl/flags/parse.h"
 #include "absl/strings/str_join.h"
 
 // Flags
@@ -13,6 +14,7 @@ ABSL_FLAG(std::string, who, "world", "Greeting message name");
 
 // Main
 int main(int argc, char** argv) {
+  absl::ParseCommandLine(argc, argv);
   std::string who = absl::GetFlag(FLAGS_who);
   std::cout << get_greet(who) << std::endl;
   print_localtime();
