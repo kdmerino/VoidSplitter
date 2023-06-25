@@ -5,4 +5,4 @@ Application set up pending change lists:
 | 1 | Set up directory skeleton. |
 | 2 | Set up first sample language app. | 
 | 3 | Set up first sample proto input app. |
-
+| 4 | Set up gRPC from bash in local workspace |
