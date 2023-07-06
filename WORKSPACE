@@ -71,6 +71,7 @@ http_archive(
     ],
     strip_prefix = "grpc-6e85620c7e258df79666a4743f862f2f82701c2d",
 )
+
 load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
 grpc_deps()
 
