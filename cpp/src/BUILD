@@ -3,7 +3,7 @@ load("@rules_proto//proto:defs.bzl", "proto_library")
 
 cc_binary(
     name = "stage1-hello-world",
-    srcs = ["hello-world.cc"],
+    srcs = ["hello-world-v1.cc"],
 )
 
 cc_library(
@@ -12,7 +12,7 @@ cc_library(
         "hello-greet.cc",
     ],
     deps = [
-        ":hello-world-request-cc-proto",
+        "//cpp/protos:hello-world-request-cc-proto",
     ],
     hdrs = ["hello-greet.h"],
     visibility = ["//cpp/test:__pkg__"],
@@ -27,16 +27,6 @@ cc_binary(
     ],
 )
 
-proto_library(
-    name = "hello-world-request-proto",
-    srcs = ["hello-world-request.proto"],
-)
-
-cc_proto_library(
-    name = "hello-world-request-cc-proto",
-    deps = [":hello-world-request-proto"],
-)
-
 cc_binary(
     name = "stage3-hello-world",
     srcs = ["hello-world-v3.cc"],
@@ -47,6 +37,32 @@ cc_binary(
         "@com_google_protobuf//:protobuf",
         ":hello-greet",
         "//cpp/lib:hello-time",
-        ":hello-world-request-cc-proto",
+        "//cpp/protos:hello-world-request-cc-proto",
     ],
 )
+
+cc_binary(
+    name = "stage5-hello-world",
+    srcs = ["hello-world-v4.cc"],
+    deps = [
+        "@com_google_absl//absl/flags:flag",
+        "@com_google_absl//absl/flags:parse",
+        "@com_google_absl//absl/strings",
+        "@com_google_protobuf//:protobuf",
+        "@com_github_grpc_grpc//:grpc++",
+        "//cpp/lib:hello-time",
+    ],
+)
+
+cc_library(
+    name = "route_guide_helper",
+    srcs = [
+        "helper.cc",
+        "helper.h",
+    ],
+    defines = ["BAZEL_BUILD"],
+    deps = [
+        "//:grpc++",
+    ],
+)
+
