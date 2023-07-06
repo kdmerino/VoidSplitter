@@ -48,3 +48,28 @@ load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_
 rules_proto_dependencies()
 rules_proto_toolchains()
 
+http_archive(
+    name = "com_github_grpc_grpc",
+    urls = [
+        "https://github.com/grpc/grpc/archive/6e85620c7e258df79666a4743f862f2f82701c2d.tar.gz",
+    ],
+    strip_prefix = "grpc-6e85620c7e258df79666a4743f862f2f82701c2d",
+)
+load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
+grpc_deps()
+load("@com_github_grpc_grpc//bazel:grpc_extra_deps.bzl", "grpc_extra_deps")
+grpc_extra_deps()
+
+http_archive(
+    name = "rules_proto_grpc",
+    urls = [
+        "https://github.com/rules-proto-grpc/rules_proto_grpc/archive/298ac1a6fd7e8436cc986c82bedbb19a706dc5c3.tar.gz"
+    ],
+    strip_prefix = "rules_proto_grpc-298ac1a6fd7e8436cc986c82bedbb19a706dc5c3",
+)
+
+load("@rules_proto_grpc//:repositories.bzl", "rules_proto_grpc_toolchains", "rules_proto_grpc_repos")
+rules_proto_grpc_toolchains()
+rules_proto_grpc_repos()
+
+load("@rules_proto_grpc//cpp:repositories.bzl", rules_proto_grpc_cpp_repos = "cpp_repos")

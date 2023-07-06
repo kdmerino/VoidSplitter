@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package cpp;
+
+// gRPC Services //
+
+
+// Greeter service definition.
+service Greeter {
+    // Sends a greeting
+    rpc SayHello (HelloWorld) returns (HelloReply) {}
+}
+
+
+// DATA STRUCTURES //
+
+
+// HelloWorld message contains user name, any amount of last names,
+// and a timestamp (time of creation).
+message HelloWorld {
+    string name = 1;
+    repeated string last_names = 2;
+    optional int32 timestamp = 3;
+}
+
+// HelloWorld message contains 
+message HelloReply {
+    string response = 1;
+    optional int32 timestamp = 2;
+}

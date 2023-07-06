@@ -1,5 +1,5 @@
 #include "hello-greet.h"
-#include "cpp/src/hello-world-request.pb.h"
+#include "cpp/protos/hello-world-request.pb.h"
 #include <string>
 
 std::string get_greet(const cpp::HelloWorldRequest& request) {
