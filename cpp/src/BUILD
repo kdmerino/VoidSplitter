@@ -23,21 +23,13 @@ cc_binary(
     srcs = ["hello-world-v2.cc"],
     deps = [
         ":hello-greet",
+        "//cpp/lib:hello-time",
     ],
 )
 
 cc_binary(
     name = "stage3-hello-world",
     srcs = ["hello-world-v3.cc"],
-    deps = [
-        ":hello-greet",
-        "//cpp/lib:hello-time",
-    ],
-)
-
-cc_binary(
-    name = "stage4-hello-world",
-    srcs = ["hello-world-v4.cc"],
     deps = [
         "@com_google_absl//absl/flags:flag",
         "@com_google_absl//absl/flags:parse",
