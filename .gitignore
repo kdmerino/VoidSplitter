@@ -1,0 +1,6 @@
+.bazelrc
+bazel-VoidSplitter
+bazel-bin
+bazel-out
+bazel-testlogs
+
