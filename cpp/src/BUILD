@@ -23,6 +23,7 @@ cc_binary(
     srcs = ["hello-world-v2.cc"],
     deps = [
         ":hello-greet",
+<<<<<<< HEAD
         "//cpp/lib:hello-time",
     ],
 )
@@ -36,14 +37,16 @@ cc_binary(
         "@com_google_absl//absl/strings",
         "@com_google_protobuf//:protobuf",
         ":hello-greet",
+=======
+>>>>>>> 1b0be18 (collapse stage3<-stage2+stage3)
         "//cpp/lib:hello-time",
         "//cpp/protos:hello-world-request-cc-proto",
     ],
 )
 
 cc_binary(
-    name = "stage4-hello-world",
-    srcs = ["hello-world-v4.cc"],
+    name = "stage3-hello-world",
+    srcs = ["hello-world-v3.cc"],
     deps = [
         "@com_google_absl//absl/flags:flag",
         "@com_google_absl//absl/flags:parse",
