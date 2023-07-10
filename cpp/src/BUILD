@@ -43,7 +43,7 @@ cc_binary(
 
 cc_binary(
     name = "stage4-hello-world",
-    srcs = ["hello-world-v5.cc"],
+    srcs = ["hello-world-v4.cc"],
     deps = [
         "@com_google_absl//absl/flags:flag",
         "@com_google_absl//absl/flags:parse",
