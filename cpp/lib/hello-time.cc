@@ -1,9 +1,14 @@
 #include "cpp/lib/hello-time.h"
-#include <ctime>
+
 #include <iostream>
+#include <ctime>
+#include <string>
 
 void print_localtime() {
-    std::time_t result = std::time(nullptr);
-    std::cout << std::asctime(std::localtime(&result)); 
+    std::cout << get_localtime() << std::endl;
 }
 
+std::string get_localtime() {
+    std::time_t result = std::time(nullptr);
+    return std::asctime(std::localtime(&result));
+}
