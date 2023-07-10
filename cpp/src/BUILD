@@ -42,8 +42,8 @@ cc_binary(
 )
 
 cc_binary(
-    name = "stage5-hello-world",
-    srcs = ["hello-world-v4.cc"],
+    name = "stage4-hello-world",
+    srcs = ["hello-world-v5.cc"],
     deps = [
         "@com_google_absl//absl/flags:flag",
         "@com_google_absl//absl/flags:parse",
@@ -51,6 +51,8 @@ cc_binary(
         "@com_google_protobuf//:protobuf",
         "@com_github_grpc_grpc//:grpc++",
         "//cpp/lib:hello-time",
+        "//cpp/protos:hello-world-cpp-proto",
+        "//cpp/protos:hello-world-cpp-grpc",
     ],
 )
 

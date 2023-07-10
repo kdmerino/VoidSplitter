@@ -3,8 +3,9 @@
 #include <string>
 #include <vector>
 #include "hello-greet.h"
+
 #include "cpp/lib/hello-time.h"
-#include "cpp/src/hello-world-request.pb.h"
+#include "cpp/protos/hello-world-request.pb.h"
 
 #include "absl/flags/flag.h"
 #include "absl/flags/parse.h"
