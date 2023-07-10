@@ -1,10 +1,22 @@
 load("@rules_cc//cc:defs.bzl", "cc_proto_library")
 load("@rules_proto//proto:defs.bzl", "proto_library")
-load("@rules_proto_grpc//cpp:defs.bzl", "cpp_grpc_compile")
+load("@rules_proto_grpc//cpp:defs.bzl", "cpp_proto_library", "cpp_grpc_library", "cpp_grpc_compile")
 
 proto_library(
     name = "hello-world-proto",
-    srcs = ["hello-world.proto"],    
+    srcs = ["hello-world.proto"],
+)
+
+cpp_proto_library(
+    name = "hello-world-cpp-proto",
+    protos = [":hello-world-proto"],
+    visibility = ["//cpp/src:__pkg__"],
+)
+
+cpp_grpc_library(
+    name = "hello-world-cpp-grpc",
+    protos = [":hello-world-proto"],
+    visibility = ["//cpp/src:__pkg__"],
 )
 
 cc_proto_library(
