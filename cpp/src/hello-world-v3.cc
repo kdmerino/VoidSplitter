@@ -2,17 +2,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 #include "hello-greet.h"
-<<<<<<< HEAD
-
-#include "cpp/lib/hello-time.h"
-#include "cpp/protos/hello-world-request.pb.h"
-
-=======
 #include "cpp/lib/hello-time.h"
 #include "cpp/src/hello-world-request.pb.h"
 
->>>>>>> 3fdac2b (Fix staging; rename files v4->v3, v3->v2 where v3 contains v2.)
 #include "absl/flags/flag.h"
 #include "absl/flags/parse.h"
 #include "absl/strings/str_join.h"
